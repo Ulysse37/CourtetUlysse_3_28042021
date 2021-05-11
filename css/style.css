@@ -18,6 +18,7 @@ main {
 header {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer {
@@ -32,6 +33,7 @@ figure {
     justify-content: center;
     flex-direction: column;
     width: 90%;
+    max-width: 500px;
     box-shadow: 5px 5px 8px #D8D8D8;
     border-radius: 15px;
     margin-left: auto;
@@ -79,21 +81,6 @@ main header p {
     color: #424242;
 }
 
-main header a {
-    width: 225px;
-    border: 1px solid;
-    border-radius: 30px;
-    box-shadow: 5px 5px 8px #D8D8D8, -5px 0px 8px #D8D8D8;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: var(--purple-color);
-    color: white;
-}
-
 figure img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -124,7 +111,7 @@ footer i {
     scale: 80%
 }
 
-span {
+span { 
     margin-left: -0.7rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
@@ -133,6 +120,24 @@ span {
     border-radius: 25px;
     background-color: var(--purple-color);
     color: white;
+}
+
+.bouton {
+    min-width: 180px;
+    border: 1px solid;
+    border-radius: 30px;
+    box-shadow: 5px 5px 8px #D8D8D8, -5px 0px 8px #D8D8D8;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    background-color: var(--purple-color);
+    color: white;
+    text-align: center;
 }
 
 .main__location {
@@ -157,17 +162,27 @@ span {
 }
 
 .main__fonctionnement ul {
+    max-width: 500px;
     margin-left: -1rem;
     margin-right: 1.5rem;
 }
 
 .main__fonctionnement li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     border-radius: 20px;
     box-shadow: 5px 5px 8px #D8D8D8;
     margin-bottom: 1.2rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: #F2F2F2;
+}
+
+.main__fonctionnement--text {
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .main__restaurant {
@@ -241,4 +256,99 @@ span {
 .police--shrikhand {
     font-family: Shrikhand, sans-serif;
 }
+/* CSS spécifique aux menus */
+
+b {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 8px;
+    margin-right: 1.5rem;
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.main__titre {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    margin-top: -2rem;
+    background-color: #F2F2F2;
+}
+
+.main__titre h1 {
+    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 175%;
+}
+
+.main__menu li {
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px #D8D8D8;
+    margin-bottom: 1rem;
+    padding-left: 10px;
+    line-height: 50%;
+    background-color: white;
+}
+
+.main_menu--text {              /* comment faire pour que le prix fasse disparaître le texte */
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main__menu ul {
+    max-width: 730px;
+    margin-left: -1.7rem;
+    margin-right: 1rem;
+}
+
+.main__menu h2 {
+    width: 12%;
+    margin-left: 1rem;
+    border-bottom: 3px solid var(--green-color);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.main__menu h3 {
+    padding-top: 1.2rem;
+}
+
+.main__menu p {
+    padding-bottom: 1.2rem;
+}
+
+.main__menu {
+    background-color: #F2F2F2;
+}
+
+.fa-arrow-left {
+    position: relative;
+    left: 25px;
+    scale: 150%;
+    color: black;
+}
+
+.coeur--menu {
+    position: relative;
+    top: 5px;
+    scale: 150%;
+}
+
+
 
