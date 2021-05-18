@@ -32,6 +32,7 @@ figure {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
     width: 90%;
     max-width: 500px;
     box-shadow: 5px 5px 8px #D8D8D8;
@@ -108,7 +109,7 @@ footer a {
 
 footer i {
     margin-right: 5px;
-    scale: 80%
+    transform: scale(0.8);
 }
 
 span { 
@@ -123,6 +124,8 @@ span {
 }
 
 .bouton {
+    position: relative;
+    z-index: 1;
     min-width: 180px;
     border: 1px solid;
     border-radius: 30px;
@@ -138,6 +141,26 @@ span {
     background-color: var(--purple-color);
     color: white;
     text-align: center;
+    
+}
+
+.bouton:hover::after {
+    opacity: 1;
+}
+
+.bouton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--pink-color);
+    border-radius: 30px;                                            /* pourquoi dois-je le remettre ? */
+    box-shadow: 5px 5px 16px #afafaf, -5px 0px 16px #afafaf;
+    transition: opacity 0.5s;
 }
 
 .main__location {
@@ -186,6 +209,7 @@ span {
 }
 
 .main__restaurant {
+    padding-bottom: 3rem;
     background-color: #F2F2F2;
 }
 
@@ -205,9 +229,9 @@ span {
 }
 
 .restaurant--new {
-    position: relative;
-    bottom: 300px;
-    left: 250px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
     width: 69px;
     height: 17px;
     padding-left: 11px;
@@ -218,19 +242,29 @@ span {
 }
 
 .index__coeur {
-    position: relative;
-    bottom: 50px;
-    left: 230px;
-    scale: 150%;
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
+    transform: scale(1.5);
     font-weight: lighter;
 }
 
+.fa-heart {
+    cursor: pointer;
+    transition: 1s;
+}
+
+.fa-heart:active {
+    background-color: var(--green-color);
+}
+
 .logo {
-    scale: 50%;
+    transform: scale(0.5);
 }
 
 .fa-store {
     padding-right: 1.3rem;
+    color: var(--purple-color);
 }
 
 .fa-list-ul {
@@ -242,7 +276,7 @@ span {
 }
 
 .fa-mobile-alt {
-    scale: 120%;
+    transform: scale(1.2);
 }
 
 .fa-utensils {
@@ -340,18 +374,18 @@ b {
 .fa-arrow-left {
     position: relative;
     left: 25px;
-    scale: 150%;
+    transform: scale(1.5);
     color: black;
 }
 
 .coeur--menu {
     position: relative;
     top: 5px;
-    scale: 150%;
+    transform: scale(1.5);
 }
 
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     footer h2 {
         margin-left: auto;
         margin-right: auto;
@@ -430,7 +464,7 @@ b {
     }
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
     .main__carte {
         display: grid;
         grid-template-columns: repeat(2, 50%);
