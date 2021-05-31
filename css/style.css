@@ -193,6 +193,9 @@ span {
     transform: scale(1.05);
     background: #E6E6E6;
 }
+.main__fonctionnement li:hover i {
+    color: var(--purple-color);
+}
 
 .main__fonctionnement li {
     display: flex;
@@ -204,6 +207,7 @@ span {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: #F2F2F2;
+    cursor: pointer;
     transition: 0.4s;
 }
 
@@ -278,7 +282,6 @@ span {
 
 .fa-store {
     padding-right: 1.3rem;
-    color: var(--purple-color);
 }
 
 .fa-list-ul {
@@ -336,6 +339,43 @@ span {
     box-shadow: 5px 5px 8px #D8D8D8;
     margin-bottom: 1rem;
     background-color: white;
+    position: relative;
+}
+
+/* Animation li menus */
+
+.main_menu--check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    background-color: var(--green-color);
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.main__menu li:hover .main_menu--check {
+    width: 5rem;
+}
+
+.main_menu--check i {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.main__menu li:hover .main_menu--check i {
+    transform: rotate(360deg);
+}
+
+.main__menu li:hover .main_menu--price {  /* Comment faire pour que le décalage du prix fasse disparaître le texte de gauche? */
+    transform: translateX(-275%);
 }
 
 .main_menu_div {
@@ -343,7 +383,11 @@ span {
     justify-content: space-between;
 }
 
-.main_menu--text {              /* comment faire pour que le prix fasse disparaître le texte */
+.main__menu li {
+    cursor: pointer;
+}
+
+.main_menu--text {
     margin-bottom: 0;
     margin-top: 0.5rem;
     margin-left: 1rem;
@@ -357,6 +401,7 @@ span {
     margin-top: 0.5rem;
     margin-right: 1rem;
     font-weight: bold;
+    transition: transform 0.3s;
 }
 
 .main__menu ul {
