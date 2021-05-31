@@ -141,10 +141,9 @@ span {
     background-color: var(--purple-color);
     color: white;
     text-align: center;
-    
 }
 
-.bouton:hover::after {
+.bouton:hover::after {                  /* animation bouton */
     opacity: 1;
 }
 
@@ -158,9 +157,9 @@ span {
     z-index: -1;
     opacity: 0;
     background-color: var(--pink-color);
-    border-radius: 30px;                                            /* pourquoi dois-je le remettre ? */
+    border-radius: 30px;                                            
     box-shadow: 5px 5px 16px #afafaf, -5px 0px 16px #afafaf;
-    transition: opacity 0.5s;
+    transition: opacity 0.4s;
 }
 
 .main__location {
@@ -190,6 +189,11 @@ span {
     margin-right: 1.5rem;
 }
 
+.main__fonctionnement li:hover {
+    transform: scale(1.05);
+    background: #E6E6E6;
+}
+
 .main__fonctionnement li {
     display: flex;
     flex-direction: row;
@@ -200,6 +204,7 @@ span {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: #F2F2F2;
+    transition: 0.4s;
 }
 
 .main__fonctionnement--text {
@@ -240,6 +245,20 @@ span {
     color: rgb(0, 128, 75);
     font-size: 90%;
 }
+/* Animation coeur index */
+.coeur--full:hover {
+    opacity: 1;
+}
+
+.coeur--full {          
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    color: var(--purple-color);
+    transition: opacity 0.5s;
+}
 
 .index__coeur {
     position: absolute;
@@ -251,11 +270,6 @@ span {
 
 .fa-heart {
     cursor: pointer;
-    transition: 1s;
-}
-
-.fa-heart:active {
-    background-color: var(--green-color);
 }
 
 .logo {
@@ -292,14 +306,6 @@ span {
 }
 /* CSS spécifique aux menus */
 
-b {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    bottom: 8px;
-    margin-right: 1.5rem;
-}
-
 .header__menu {
     display: flex;
     flex-direction: row;
@@ -329,19 +335,28 @@ b {
     border-radius: 15px;
     box-shadow: 5px 5px 8px #D8D8D8;
     margin-bottom: 1rem;
-    padding-left: 10px;
-    line-height: 50%;
     background-color: white;
 }
 
+.main_menu_div {
+    display: flex;
+    justify-content: space-between;
+}
+
 .main_menu--text {              /* comment faire pour que le prix fasse disparaître le texte */
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
     white-space:nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.main_menu--price {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    font-weight: bold;
 }
 
 .main__menu ul {
@@ -378,12 +393,26 @@ b {
     color: black;
 }
 
-.coeur--menu {
-    position: relative;
-    top: 5px;
-    transform: scale(1.5);
+/* Animation du coeur des menu */
+.coeur--full--menu:hover {
+    opacity: 1;
 }
 
+.coeur--full--menu {          
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    opacity: 0;
+    color: var(--purple-color);
+    transition: opacity 0.5s;
+}
+ 
+.coeur--menu {
+    position: relative;
+    top: 10px;
+    transform: scale(1.5);
+}
 
 @media (min-width: 768px) {
     footer h2 {
