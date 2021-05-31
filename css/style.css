@@ -1,3 +1,54 @@
+/* Animation menu */ 
+@keyframes menu_popup {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu_li_un {
+    animation: menu_popup 0.3s ease-out both;
+}
+
+.menu_li_deux {
+    animation: menu_popup 0.3s ease-out 0.15s both;
+}
+
+.menu_li_trois{
+    animation: menu_popup 0.3s ease-out 0.3s both;
+}
+
+.menu_li_quatre {
+    animation: menu_popup 0.3s ease-out 0.45s both;
+}
+
+.menu_li_cinq {
+    animation: menu_popup 0.3s ease-out 0.60s both;
+}
+
+.menu_li_six {
+    animation: menu_popup 0.3s ease-out 0.75s both;
+}
+
+.menu_li_sept {
+    animation: menu_popup 0.3s ease-out 0.90s both;
+}
+
+.menu_li_huit {
+    animation: menu_popup 0.3s ease-out 1.05s both;
+}
+.menu_li_neuf {
+    animation: menu_popup 0.3s ease-out 1.20s both;
+}
+
+.menu_li_dix {
+    animation: menu_popup 0.3s ease-out 1.35s both;
+}
+
 html {
     --purple-color: #9356DC; 
     --pink-color: #FF79DA;
