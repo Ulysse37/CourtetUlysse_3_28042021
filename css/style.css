@@ -1,3 +1,31 @@
+/* Animation loading spinner */
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    animation: loading 0s 1.5s forwards;
+}
+
+.fa-cog {
+    color: var(--purple-color);
+}
+
+
 /* Animation menu */ 
 @keyframes menu_popup {
     0% {
