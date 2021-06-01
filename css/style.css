@@ -25,7 +25,6 @@
     color: var(--purple-color);
 }
 
-
 /* Animation menu */ 
 @keyframes menu_popup {
     0% {
@@ -202,6 +201,8 @@ span {
     color: white;
 }
 
+/* Animation bouton */
+
 .bouton {
     position: relative;
     z-index: 1;
@@ -222,7 +223,7 @@ span {
     text-align: center;
 }
 
-.bouton:hover::after {                  /* animation bouton */
+.bouton:hover::after {
     opacity: 1;
 }
 
@@ -453,8 +454,12 @@ span {
     transform: rotate(360deg);
 }
 
-.main__menu li:hover .main_menu--price {  /* Comment faire pour que le décalage du prix fasse disparaître le texte de gauche? */
-    transform: translateX(-275%);
+.main__menu li:hover .main_menu--price { 
+    margin-right: 5.5rem;
+}
+
+.main__menu li:hover h3 {               /* Réduction du width du nom du plat lors du hover */
+    width: calc(100% - 95px);
 }
 
 .main_menu_div {
@@ -472,7 +477,7 @@ span {
     margin-left: 1rem;
     white-space:nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
 }
 
 .main_menu--price {
@@ -480,7 +485,7 @@ span {
     margin-top: 0.5rem;
     margin-right: 1rem;
     font-weight: bold;
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .main__menu ul {
@@ -630,6 +635,7 @@ span {
     }
 
     /*css menu */
+
     .main__menu h2 {
         width: 5%;
     }
