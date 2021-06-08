@@ -1,7 +1,88 @@
-html {
+:root {
     --purple-color: #9356DC; 
     --pink-color: #FF79DA;
     --green-color: #99E2D0;
+    --box-shadow: #D8D8D8;
+    --background-color: #F2F2F2;
+}
+/* Animation loading spinner */
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.loading-spinner {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    animation: loading 0s 1.5s forwards;
+}
+
+.fa-cog {
+    color: var(--purple-color);
+}
+
+/* Animation menu */ 
+@keyframes menu_popup {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu_li_un {
+    animation: menu_popup 0.3s ease-out both;
+}
+
+.menu_li_deux {
+    animation: menu_popup 0.3s ease-out 0.15s both;
+}
+
+.menu_li_trois{
+    animation: menu_popup 0.3s ease-out 0.3s both;
+}
+
+.menu_li_quatre {
+    animation: menu_popup 0.3s ease-out 0.45s both;
+}
+
+.menu_li_cinq {
+    animation: menu_popup 0.3s ease-out 0.60s both;
+}
+
+.menu_li_six {
+    animation: menu_popup 0.3s ease-out 0.75s both;
+}
+
+.menu_li_sept {
+    animation: menu_popup 0.3s ease-out 0.90s both;
+}
+
+.menu_li_huit {
+    animation: menu_popup 0.3s ease-out 1.05s both;
+}
+.menu_li_neuf {
+    animation: menu_popup 0.3s ease-out 1.20s both;
+}
+
+.menu_li_dix {
+    animation: menu_popup 0.3s ease-out 1.35s both;
+}
+
+html {
     font-family: Roboto, sans-serif;
 }
 
@@ -10,35 +91,44 @@ body {
     margin: 0;
 }
 
-main {
+main, header, footer, figure, .loading-spinner, .main__location, .main__fonctionnement li, .header__menu, .main__titre, .main_menu--check, .main_menu_div {
     display: flex;
+}
+
+.bouton::after, .restaurant--new, .coeur--full, .index__coeur, .main_menu--check, .coeur--full--menu {
+    position: absolute;
+}
+
+figure, .bouton, .main__menu li, .fa-arrow-left, .coeur--menu {
+    position: relative;
+}
+
+main {
     flex-direction: column;
 }
 
 header {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 footer {
-    display: flex;
     flex-direction: column;
     background-color: #424242;
     color: white;
 }
 
 figure {
-    display: flex;
     justify-content: center;
     flex-direction: column;
     width: 90%;
     max-width: 500px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
+    transition: 0.2s;
 }
 
 figcaption {
@@ -70,10 +160,9 @@ h1 {
 
 main header {
     flex-direction: column;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
     text-align: center;
 }
-
 
 main header p {
     margin-left: 0.7rem;
@@ -108,40 +197,51 @@ footer a {
 
 footer i {
     margin-right: 5px;
-    scale: 80%
+    transform: scale(0.8);
 }
 
 span { 
     margin-left: -0.7rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 25px;
     background-color: var(--purple-color);
     color: white;
 }
 
+/* Animation bouton */
+
 .bouton {
+    z-index: 1;
     min-width: 180px;
     border: 1px solid;
     border-radius: 30px;
-    box-shadow: 5px 5px 8px #D8D8D8, -5px 0px 8px #D8D8D8;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    box-shadow: 5px 5px 8px var(--box-shadow), -5px 0px 8px var(--box-shadow);
+    margin: 1rem auto 3rem;
+    padding: 1rem 1.5rem;
     background-color: var(--purple-color);
     color: white;
     text-align: center;
 }
 
+.bouton:hover::after {
+    opacity: 1;
+}
+
+.bouton::after {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--pink-color);
+    border-radius: 30px;                                            
+    box-shadow: 5px 5px 16px #afafaf, -5px 0px 16px #afafaf;
+    transition: opacity 0.4s;
+}
+
 .main__location {
-    display: flex;
     justify-content: center;
     box-shadow: inset 0 2px 3px #BDBDBD;
     margin-bottom: 0;
@@ -167,16 +267,25 @@ span {
     margin-right: 1.5rem;
 }
 
+.main__fonctionnement li:hover {
+    transform: scale(1.05);
+    background: #E6E6E6;
+}
+.main__fonctionnement li:hover i {
+    color: var(--purple-color);
+}
+
 .main__fonctionnement li {
-    display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     margin-bottom: 1.2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 .main__fonctionnement--text {
@@ -185,8 +294,21 @@ span {
     text-overflow: ellipsis;
 }
 
+/* Animation des cartes */
+figure:hover {
+    box-shadow: 10px 10px 8px #c4c4c4;
+    transform: scale(1.05);
+}
+
+figure:hover .restaurant--new {
+    transform: scale(1.05);
+    color: white;
+    background-color: rgb(50, 136, 100);
+}
+
 .main__restaurant {
-    background-color: #F2F2F2;
+    padding-bottom: 3rem;
+    background-color: var(--background-color);
 }
 
 .main__restaurant h2 {
@@ -205,9 +327,8 @@ span {
 }
 
 .restaurant--new {
-    position: relative;
-    bottom: 300px;
-    left: 250px;
+    top: 0px;
+    right: 10px;
     width: 69px;
     height: 17px;
     padding-left: 11px;
@@ -215,18 +336,35 @@ span {
     background-color: var(--green-color);
     color: rgb(0, 128, 75);
     font-size: 90%;
+    transition: 0.2s;
+}
+/* Animation coeur index */
+.coeur--full:hover {
+    opacity: 1;
+}
+
+.coeur--full {          
+    content: "";
+    top: 0;
+    right: 0;
+    opacity: 0;
+    color: var(--purple-color);
+    transition: opacity 0.5s;
 }
 
 .index__coeur {
-    position: relative;
-    bottom: 50px;
-    left: 230px;
-    scale: 150%;
+    bottom: 40px;
+    right: 35px;
+    transform: scale(1.5);
     font-weight: lighter;
 }
 
+.fa-heart {
+    cursor: pointer;
+}
+
 .logo {
-    scale: 50%;
+    transform: scale(0.5);
 }
 
 .fa-store {
@@ -242,7 +380,7 @@ span {
 }
 
 .fa-mobile-alt {
-    scale: 120%;
+    transform: scale(1.2);
 }
 
 .fa-utensils {
@@ -258,16 +396,7 @@ span {
 }
 /* CSS spécifique aux menus */
 
-b {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    bottom: 8px;
-    margin-right: 1.5rem;
-}
-
 .header__menu {
-    display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
@@ -275,39 +404,84 @@ b {
 }
 
 .main__titre {
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
     border-radius: 30px;
     margin-top: -2rem;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
 }
 
 .main__titre h1 {
-    margin-left: 1rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 2rem 2rem 1rem 1rem;
     font-size: 175%;
 }
 
 .main__menu li {
     border-radius: 15px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     margin-bottom: 1rem;
-    padding-left: 10px;
-    line-height: 50%;
     background-color: white;
 }
 
-.main_menu--text {              /* comment faire pour que le prix fasse disparaître le texte */
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    margin-top: 0;
+/* Animation li menus */
+
+.main_menu--check {
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    background-color: var(--green-color);
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.main__menu li:hover .main_menu--check {
+    width: 5rem;
+}
+
+.main_menu--check i {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.main__menu li:hover .main_menu--check i {
+    transform: rotate(360deg);
+}
+
+.main__menu li:hover .main_menu--price { 
+    margin-right: 5.5rem;
+}
+
+.main__menu li:hover h3 {               /* Réduction du width du nom du plat lors du hover */
+    width: calc(100% - 95px);
+}
+
+.main_menu_div {
+    justify-content: space-between;
+}
+
+.main__menu li {
+    cursor: pointer;
+}
+
+.main_menu--text {
     margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
     white-space:nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.main_menu--price {
+    margin: 0.5rem 1rem 0;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .main__menu ul {
@@ -334,38 +508,50 @@ b {
 }
 
 .main__menu {
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
 }
 
 .fa-arrow-left {
-    position: relative;
     left: 25px;
-    scale: 150%;
+    transform: scale(1.5);
     color: black;
 }
 
-.coeur--menu {
-    position: relative;
-    top: 5px;
-    scale: 150%;
+/* Animation du coeur des menu */
+.coeur--full--menu:hover {
+    opacity: 1;
 }
 
+.coeur--full--menu {          
+    content: "";
+    top: 1px;
+    right: 0;
+    opacity: 0;
+    color: var(--purple-color);
+    transition: opacity 0.5s;
+}
+ 
+.coeur--menu {
+    top: 10px;
+    transform: scale(1.5);
+}
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
+    footer ul, .main__fonctionnement, .main__restaurant h2, .main__carte, .main__titre, .main__menu ul {
+        display: flex;
+    }
     footer h2 {
         margin-left: auto;
         margin-right: auto;
     }
 
     footer ul {
-        display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-left: -2.5rem;
     }
 
     .main__fonctionnement {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -375,7 +561,6 @@ b {
     }
 
     .main__restaurant h2{
-        display: flex;
         justify-content: center;
     }
 
@@ -385,7 +570,6 @@ b {
     }
 
     .main__carte {
-        display: flex;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
@@ -397,17 +581,15 @@ b {
         margin-right: auto;
         max-width: 767px;
         border-radius: 25px;
-        box-shadow: 10px 10px 20px #D8D8D8, -10px 0px 20px #D8D8D8;
+        box-shadow: 10px 10px 20px var(--box-shadow), -10px 0px 20px var(--box-shadow);
         margin-bottom: 3rem;
     }
 
     .main__titre {
-        display: flex;
         justify-content: center;
     }
 
     .main__menu ul {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: auto;
@@ -430,7 +612,7 @@ b {
     }
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 1200px) {
     .main__carte {
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -443,6 +625,7 @@ b {
     }
 
     /*css menu */
+
     .main__menu h2 {
         width: 5%;
     }
