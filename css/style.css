@@ -1,3 +1,10 @@
+:root {
+    --purple-color: #9356DC; 
+    --pink-color: #FF79DA;
+    --green-color: #99E2D0;
+    --box-shadow: #D8D8D8;
+    --background-color: #F2F2F2;
+}
 /* Animation loading spinner */
 @keyframes loading {
     0% {
@@ -77,9 +84,6 @@
 }
 
 html {
-    --purple-color: #9356DC; 
-    --pink-color: #FF79DA;
-    --green-color: #99E2D0;
     font-family: Roboto, sans-serif;
 }
 
@@ -113,7 +117,7 @@ figure {
     position: relative;
     width: 90%;
     max-width: 500px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -150,10 +154,9 @@ h1 {
 
 main header {
     flex-direction: column;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
     text-align: center;
 }
-
 
 main header p {
     margin-left: 0.7rem;
@@ -193,10 +196,7 @@ footer i {
 
 span { 
     margin-left: -0.7rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 25px;
     background-color: var(--purple-color);
     color: white;
@@ -210,15 +210,9 @@ span {
     min-width: 180px;
     border: 1px solid;
     border-radius: 30px;
-    box-shadow: 5px 5px 8px #D8D8D8, -5px 0px 8px #D8D8D8;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    box-shadow: 5px 5px 8px var(--box-shadow), -5px 0px 8px var(--box-shadow);
+    margin: 1rem auto 3rem;
+    padding: 1rem 1.5rem;
     background-color: var(--purple-color);
     color: white;
     text-align: center;
@@ -283,11 +277,11 @@ span {
     flex-direction: row;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     margin-bottom: 1.2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
     cursor: pointer;
     transition: 0.4s;
 }
@@ -312,7 +306,7 @@ figure:hover .restaurant--new {
 
 .main__restaurant {
     padding-bottom: 3rem;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
 }
 
 .main__restaurant h2 {
@@ -417,20 +411,17 @@ figure:hover .restaurant--new {
     flex-wrap: wrap;
     border-radius: 30px;
     margin-top: -2rem;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
 }
 
 .main__titre h1 {
-    margin-left: 1rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 2rem 2rem 1rem 1rem;
     font-size: 175%;
 }
 
 .main__menu li {
     border-radius: 15px;
-    box-shadow: 5px 5px 8px #D8D8D8;
+    box-shadow: 5px 5px 8px var(--box-shadow);
     margin-bottom: 1rem;
     background-color: white;
     position: relative;
@@ -495,9 +486,7 @@ figure:hover .restaurant--new {
 }
 
 .main_menu--price {
-    margin-bottom: 0;
-    margin-top: 0.5rem;
-    margin-right: 1rem;
+    margin: 0.5rem 1rem 0;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -526,7 +515,7 @@ figure:hover .restaurant--new {
 }
 
 .main__menu {
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
 }
 
 .fa-arrow-left {
@@ -603,7 +592,7 @@ figure:hover .restaurant--new {
         margin-right: auto;
         max-width: 767px;
         border-radius: 25px;
-        box-shadow: 10px 10px 20px #D8D8D8, -10px 0px 20px #D8D8D8;
+        box-shadow: 10px 10px 20px var(--box-shadow), -10px 0px 20px var(--box-shadow);
         margin-bottom: 3rem;
     }
 
