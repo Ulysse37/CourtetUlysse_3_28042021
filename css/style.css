@@ -17,7 +17,6 @@
 }
 
 .loading-spinner {
-    display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -92,29 +91,36 @@ body {
     margin: 0;
 }
 
-main {
+main, header, footer, figure, .loading-spinner, .main__location, .main__fonctionnement li, .header__menu, .main__titre, .main_menu--check, .main_menu_div {
     display: flex;
+}
+
+.bouton::after, .restaurant--new, .coeur--full, .index__coeur, .main_menu--check, .coeur--full--menu {
+    position: absolute;
+}
+
+figure, .bouton, .main__menu li, .fa-arrow-left, .coeur--menu {
+    position: relative;
+}
+
+main {
     flex-direction: column;
 }
 
 header {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 footer {
-    display: flex;
     flex-direction: column;
     background-color: #424242;
     color: white;
 }
 
 figure {
-    display: flex;
     justify-content: center;
     flex-direction: column;
-    position: relative;
     width: 90%;
     max-width: 500px;
     box-shadow: 5px 5px 8px var(--box-shadow);
@@ -205,7 +211,6 @@ span {
 /* Animation bouton */
 
 .bouton {
-    position: relative;
     z-index: 1;
     min-width: 180px;
     border: 1px solid;
@@ -224,7 +229,6 @@ span {
 
 .bouton::after {
     content: "";
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -238,7 +242,6 @@ span {
 }
 
 .main__location {
-    display: flex;
     justify-content: center;
     box-shadow: inset 0 2px 3px #BDBDBD;
     margin-bottom: 0;
@@ -273,7 +276,6 @@ span {
 }
 
 .main__fonctionnement li {
-    display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 20px;
@@ -325,7 +327,6 @@ figure:hover .restaurant--new {
 }
 
 .restaurant--new {
-    position: absolute;
     top: 0px;
     right: 10px;
     width: 69px;
@@ -344,7 +345,6 @@ figure:hover .restaurant--new {
 
 .coeur--full {          
     content: "";
-    position: absolute;
     top: 0;
     right: 0;
     opacity: 0;
@@ -353,7 +353,6 @@ figure:hover .restaurant--new {
 }
 
 .index__coeur {
-    position: absolute;
     bottom: 40px;
     right: 35px;
     transform: scale(1.5);
@@ -398,7 +397,6 @@ figure:hover .restaurant--new {
 /* CSS spécifique aux menus */
 
 .header__menu {
-    display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
@@ -406,7 +404,6 @@ figure:hover .restaurant--new {
 }
 
 .main__titre {
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
     border-radius: 30px;
@@ -424,17 +421,14 @@ figure:hover .restaurant--new {
     box-shadow: 5px 5px 8px var(--box-shadow);
     margin-bottom: 1rem;
     background-color: white;
-    position: relative;
 }
 
 /* Animation li menus */
 
 .main_menu--check {
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 0;
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -468,7 +462,6 @@ figure:hover .restaurant--new {
 }
 
 .main_menu_div {
-    display: flex;
     justify-content: space-between;
 }
 
@@ -519,7 +512,6 @@ figure:hover .restaurant--new {
 }
 
 .fa-arrow-left {
-    position: relative;
     left: 25px;
     transform: scale(1.5);
     color: black;
@@ -532,7 +524,6 @@ figure:hover .restaurant--new {
 
 .coeur--full--menu {          
     content: "";
-    position: absolute;
     top: 1px;
     right: 0;
     opacity: 0;
@@ -541,26 +532,26 @@ figure:hover .restaurant--new {
 }
  
 .coeur--menu {
-    position: relative;
     top: 10px;
     transform: scale(1.5);
 }
 
 @media (min-width: 768px) {
+    footer ul, .main__fonctionnement, .main__restaurant h2, .main__carte, .main__titre, .main__menu ul {
+        display: flex;
+    }
     footer h2 {
         margin-left: auto;
         margin-right: auto;
     }
 
     footer ul {
-        display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-left: -2.5rem;
     }
 
     .main__fonctionnement {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -570,7 +561,6 @@ figure:hover .restaurant--new {
     }
 
     .main__restaurant h2{
-        display: flex;
         justify-content: center;
     }
 
@@ -580,7 +570,6 @@ figure:hover .restaurant--new {
     }
 
     .main__carte {
-        display: flex;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
@@ -597,12 +586,10 @@ figure:hover .restaurant--new {
     }
 
     .main__titre {
-        display: flex;
         justify-content: center;
     }
 
     .main__menu ul {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: auto;
